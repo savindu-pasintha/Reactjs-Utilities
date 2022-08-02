@@ -310,7 +310,24 @@ const MachineLog = (props) => {
     searchAlwaysOpen: false,
     filter: false,
     print: false,
-    download: false,
+    download:true,
+   downloadOptions: { 
+      filename: 'eventTable.csv',//thi one is working yes
+    //customCSVdata: {"a":"1","b":"5555"}, //not working this
+  },
+    onDownload: (buildHead, buildBody, columns, data) => {
+     // console.log("custom onDownload","buildeader : ",buildHead," body : ",buildBody, " colums :",columns," data : ",data);
+     const headerCol=[{  name: "Asset",
+     label: "Ship Name (Imo)",},{ name: "CustomerContract",
+     label: "Customer Name",
+     },{
+      name: "GroupFlag",
+      label: "Flag",}];
+      data = data.filter((value,ind)=>{{
+        if(value.index<10){return value;}
+      }})
+      return `${buildHead(headerCol)}${buildBody(data)}`.trim();
+      },
     expandableRows: false,
     confirmFilters: false,
     viewColumns: false,
@@ -320,6 +337,7 @@ const MachineLog = (props) => {
       console.log(action)
       console.dir(state)
     },
+    
   }
 
   useEffect(() => {
