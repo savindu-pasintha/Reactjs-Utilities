@@ -1,5 +1,5 @@
 import { click } from '@testing-library/user-event/dist/click';
-import React, { useCallback, useEffect, useState, useMemo } from 'react'
+import React, { useCallback, useEffect, useState, useMemo, useRef } from 'react'
 
 //custom hook used for the do some external task same as a react hook
 export const useCustomHook = (url) => {
@@ -34,9 +34,21 @@ function ReactHookUsage() {
         return (Math.random(1000) * 100).toFixed(1);
     }, [stateHook]);
 
+    //use ref for store data
+    const execute_useRef_value = useRef("Old 9");
+    const execute_useRef_access_element = useRef(null);
+
+
     const click = () => {
+        //assign values by seStateHook
         setStateHook((Math.random(1000) * 100).toFixed(1))
         console.log("custom hook : ", fetchData)
+
+        //assigne values by UseRef
+        execute_useRef_value.current = "New 10"
+
+        //focus the element by useRef
+        execute_useRef_access_element.current.focus();
     }
 
 
@@ -54,6 +66,8 @@ function ReactHookUsage() {
             <h1>--- useCallb {execute_useCallBack()}</h1>
             <br />
             <h1>--- useMemo {execute_useMemo}</h1>
+            <br />
+            <h1>--- useRef  {execute_useRef_value.current} <input ref={execute_useRef_access_element} type="text" /></h1>
         </div>
     )
 }
