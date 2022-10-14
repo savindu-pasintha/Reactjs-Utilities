@@ -292,6 +292,7 @@ const MachineLog = (props) => {
   ]
 */
   const options = {
+    costomToolbarSelect : ()=>{return (<>onSelectRow:false</>)} //checkbox select krddi en toop bar ek ain krnn
     //search: searchBtn,
     //download: downloadBtn,
     //print: printBtn,
