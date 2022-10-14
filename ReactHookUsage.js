@@ -44,10 +44,10 @@ function ReactHookUsage() {
         setStateHook((Math.random(1000) * 100).toFixed(1))
         console.log("custom hook : ", fetchData)
 
-        //assigne values by UseRef
+        //useRef : value assign krnn
         execute_useRef_value.current = "New 10"
 
-        //focus the element by useRef
+        //useRef : jsx element ekk event handle krnn
         execute_useRef_access_element.current.focus();
     }
 
