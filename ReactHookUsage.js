@@ -23,12 +23,12 @@ function ReactHookUsage() {
     //wenm function ekk hadul data return krl dagnn useeffect eke ek krnne nathuwa
     const fetchData = useCustomHook("https://jsonplaceholder.typicode.com/todos")
 
-    //useCallBack
+    //useCallBack okedi wenne speedly load wenw 50ms
     const execute_useCallBack = useCallback(() => {
         return (Math.random(1000) * 100).toFixed(1);
-    }, []);
+    }, [stateHook]);
 
-    /** mokak hari state ekk change weddi witrak mokk hari 
+    /** mokak hari state ekk change weddi witrak mokk hari [stateHook]
      * deyak krnn use krnn puluwan */
     const execute_useMemo = useMemo(() => {
         return (Math.random(1000) * 100).toFixed(1);
@@ -55,7 +55,7 @@ function ReactHookUsage() {
     /**useEffect - component load time do some thing 
      * componentDidMount, componentDidUpdate, and componentWillUnmount
      * state ekk update time do some thing */
-    useEffect(() => { console.log("useEffect working !") }, [stateHook])
+    //useEffect(() => { console.log("useEffect working !") }, [stateHook])
 
     return (
         <div>
