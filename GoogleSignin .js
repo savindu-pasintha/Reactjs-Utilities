@@ -27,12 +27,12 @@ function handleSignOut(event){
 
 useEffect(()=>{
   //global google;
-  google.accounts.id.initialize({
+  window.google.accounts.id.initialize({
     client_id:CLIENT_ID,
     callback: handleCallbackResponse
   });
 
-  google.accounts.id.renderButton(
+  window.google.accounts.id.renderButton(
     document.getElementById("signInDiv"),
     {theme:"Outline",size:"large"}
   )
