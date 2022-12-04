@@ -55,7 +55,15 @@ function ReactHookUsage() {
     /**useEffect - component load time do some thing 
      * componentDidMount, componentDidUpdate, and componentWillUnmount
      * state ekk update time do some thing */
-    //useEffect(() => { console.log("useEffect working !") }, [stateHook])
+    
+     //componenent  did mount
+    //useEffect(() => { console.log("useEffect working component did mount!") }, [])
+    
+    //component did  updated
+     useEffect(() => { console.log("useEffect working ! component did  updated") }, [stateHook])
+    
+    //component  will un mount
+     useEffect(() => { return () => console.log("useEffect working ! component will un mount") }, [])
 
     return (
         <div>
