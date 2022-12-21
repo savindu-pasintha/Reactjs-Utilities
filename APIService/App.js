@@ -1,18 +1,4 @@
-import styles from './style'
-import './style.css'
-import {
-  Billing,
-  Business,
-  CardDeal,
-  Clients,
-  CTA,
-  Footer,
-  Navbar,
-  Stats,
-  Testimonials,
-  Hero,
-} from './components'
-
+import react from 'react'
 import {
   postRequest,
   getRequest,
