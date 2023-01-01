@@ -64,6 +64,17 @@ function ReactHookUsage() {
     
     //component  will un mount
      useEffect(() => { return () => console.log("useEffect working ! component will un mount") }, [])
+    
+    /*
+    const navigate = useNavigate();
+    navigate("/path",{state:{name:"name"}}
+    
+    const location = useLocation();
+    console.log(location)
+    
+    const parms = usePararms()
+    console.log(parms)
+    */
 
     return (
         <div>
