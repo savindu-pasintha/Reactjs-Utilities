@@ -1,0 +1,23 @@
+// Event listener for keyboard input
+document.addEventListener('keydown', handleKeyPress);
+
+// Function to handle keyboard events
+function handleKeyPress(event) {
+  // Check if the pressed key is the Enter key
+  if (event.key === 'Enter') {
+    // Get the input value from the barcode scanner
+    const scannedValue = event.target.value;
+    
+    // Process the scanned value
+    processScannedValue(scannedValue);
+    
+    // Clear the input field for the next scan
+    event.target.value = '';
+  }
+}
+
+// Function to process the scanned value
+function processScannedValue(scannedValue) {
+  // Process the scanned value here
+  console.log('Scanned value:', scannedValue);
+}
