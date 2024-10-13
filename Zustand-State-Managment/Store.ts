@@ -64,9 +64,13 @@ export const useStore = create<Store>()(
                     });
                 }
             })
-            , { name: 'local-storage-store',
-                getStorage: () => sessionStorage   // define the web storage to save states
-             })
+            , {
+                name: "useMedicalStore",
+                // getStorage: () => sessionStorage Keeps data until the tab or browser is closed & More privacy as the data isn't available after the session ends
+                // getStorage: () => localforage,  use IndexedDB via import localforage from 'localforage'; localforage Supports larger amounts of data.
+                // getStorage: () => localStorage, use browser's local storage, Data persists even after closing the browser
+                // getStorage: ()=>  AsyncStorage,  import AsyncStorage from '@react-native-async-storage/async-storage'; Built-in persistence for React Native apps . Handles large amounts of data better than LocalStorage.
+              })
     ))
 
 
